@@ -3,13 +3,13 @@
    ============================== */
 :root {
   /* Colors */
-  --color-primary: #e6cebe;
-  --color-primary-hover: #c5bba9;
-  --color-primary-light: #e4d4ccd6;
-  --color-secondary: #3b3535;
+  --color-primary: #d4b18f;
+  --color-primary-hover: #bf9f81;
+  --color-primary-light: #eee0d2;
+  --color-secondary: #7f6a56;
   --color-text: #333;
-  --color-accent: #68665f;
-  --color-bg: #d4c492;
+  --color-accent: #2a231d;
+  --color-bg: #d8b99a;
   --color-border: rgba(0, 0, 0, 0.1);
 
   /* Shadows */
@@ -205,4 +205,197 @@ body {
 .btn:hover svg,
 .btn:hover i {
   transform: translateX(3px);
+}
+
+/* ==============================
+   ✨ Entrance Animations
+   ============================== */
+
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Up */
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In from Left */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In from Right */
+.slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideRight 0.8s ease-out forwards;
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom In */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 0.6s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered Fade (great for grids) */
+.stagger-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggerFade 0.6s ease-out forwards;
+}
+
+@keyframes staggerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-fade:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-fade:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-fade:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-fade:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stagger-fade:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* ==============================
+   💫 Hover Animations
+   ============================== */
+
+/* Subtle Lift */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow on Hover */
+.hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px var(--color-primary);
+  transform: scale(1.03);
+}
+
+/* Pulse Animation (attention grabber) */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Text Reveal (typing-like entrance) */
+.text-reveal {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 2px solid var(--color-primary);
+  animation: textReveal 2s steps(20, end) forwards;
+}
+
+@keyframes textReveal {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* ==============================
+   🌈 Utility Mix
+   ============================== */
+
+/* Delay helpers (for chaining animations) */
+.delay-1 {
+  animation-delay: 0.2s !important;
+}
+
+.delay-2 {
+  animation-delay: 0.4s !important;
+}
+
+.delay-3 {
+  animation-delay: 0.6s !important;
+}
+
+.delay-4 {
+  animation-delay: 0.8s !important;
+}
+
+.delay-5 {
+  animation-delay: 1s !important;
 }
