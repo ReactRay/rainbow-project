@@ -1,0 +1,208 @@
+/* ==============================
+   Root CSS Variables
+   ============================== */
+:root {
+  /* Colors */
+  --color-primary: #e6cebe;
+  --color-primary-hover: #c5bba9;
+  --color-primary-light: #e4d4ccd6;
+  --color-secondary: #3b3535;
+  --color-text: #333;
+  --color-accent: #68665f;
+  --color-bg: #d4c492;
+  --color-border: rgba(0, 0, 0, 0.1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 3px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-slow: all 0.4s ease;
+
+  /* Typography */
+  --font-family: 'Inter', 'Poppins', sans-serif;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-weight-bold: 600;
+
+  --letter-spacing-sm: 0.3em;
+  --letter-spacing-md: 0.4em;
+  --letter-spacing-lg: 0.5em;
+}
+
+/* ==============================
+   Base Resets
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+
+/* Common Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-sm);
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-slow);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  box-shadow: var(--shadow-lg);
+  letter-spacing: var(--letter-spacing-lg);
+}
+
+/* Primary (filled) button */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Secondary (outlined) button */
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Accent Button (Green) */
+.btn-accent {
+  background: var(--color-accent);
+  color: white;
+  border: 2px solid var(--color-accent);
+}
+
+.btn-accent:hover {
+  background: #00e676;
+  transform: translateY(-2px);
+}
+
+/* 3D Button Style (like in your image) */
+.btn-3d {
+  border: 3px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 0 #2244cc, 0 6px 12px rgba(51, 102, 255, 0.4);
+  transition: var(--transition-fast);
+}
+
+.btn-3d:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 #2244cc, 0 12px 24px rgba(51, 102, 255, 0.4);
+}
+
+/* White 3D outline version */
+.btn-3d-outline {
+  border: 3px solid #fff;
+  background: #fff;
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 0 #ddd, 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-fast);
+}
+
+.btn-3d-outline:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 #ccc, 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ==============================
+   Utilities
+   ============================== */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
+}
+
+.shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* ==============================
+   Icons in Buttons
+   ============================== */
+.btn svg,
+.btn i {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover svg,
+.btn:hover i {
+  transform: translateX(3px);
+}

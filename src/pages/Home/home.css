@@ -1,0 +1,100 @@
+@import '../../index.css';
+
+
+.home {
+    display: flex;
+    background-color: var(--color-primary-light);
+    height: 90vh;
+
+    .container {
+        padding: 4rem 1rem;
+    }
+
+
+    .half-one {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(to right, rgba(185, 156, 131, 0.689), rgba(76, 62, 62, 0.443)),
+            url('../../../public/pic2.jpg') center/cover no-repeat;
+        gap: 1.5rem;
+        box-shadow: var(--shadow-lg);
+        border-radius: var(--radius-lg);
+
+
+        .main-header {
+            letter-spacing: var(--letter-spacing-sm);
+            font-size: 3rem;
+            color: var(--color-text);
+            font-family: 'poppins', sans-serif;
+            font-weight: 400;
+            display: inline;
+
+
+
+        }
+
+        ul {
+            margin-top: 1rem;
+            list-style-type: none;
+
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--color-secondary);
+            font-weight: 400;
+            font-size: 1rem;
+
+
+        }
+
+    }
+
+    .half-one,
+    .half-two {
+        flex: 1;
+        height: 100%;
+
+    }
+
+    .half-two {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        background-color: var(--color-accent);
+
+        h2 {
+            color: var(--color-accent);
+            letter-spacing: var(--letter-spacing-md);
+            color: var(--color-primary-light);
+            font-weight: 400;
+            text-transform: capitalize;
+            border-bottom: 1px solid var(--color-primary);
+
+        }
+
+        p {
+            color: var(--color-primary-light);
+            line-height: 1.5;
+            font-size: 1.4rem;
+        }
+
+        .pic {
+            width: 50%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+
+    }
+}
