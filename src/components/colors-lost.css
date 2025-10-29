@@ -1,0 +1,8 @@
+@import '.././index.css';
+
+
+.colors-list {
+    display: flex;
+    flex-wrap: wrap;
+
+}
