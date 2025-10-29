@@ -16,21 +16,21 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(to right, rgba(185, 156, 131, 0.689), rgba(76, 62, 62, 0.443)),
+        background: linear-gradient(to right, rgba(173, 129, 78, 0.913), rgba(179, 153, 129, 0.621)),
             url('../../../public/pic2.jpg') center/cover no-repeat;
         gap: 1.5rem;
         box-shadow: var(--shadow-lg);
         border-radius: var(--radius-lg);
+        color: aliceblue;
 
 
         .main-header {
             letter-spacing: var(--letter-spacing-sm);
             font-size: 3rem;
-            color: var(--color-text);
             font-family: 'poppins', sans-serif;
-            font-weight: 400;
+            font-weight: 300;
             display: inline;
-
+            border-bottom: 1px solid var(--color-primary-light);
 
 
         }
@@ -43,9 +43,9 @@
 
         li {
             margin-bottom: 0.5rem;
-            color: var(--color-secondary);
             font-weight: 400;
             font-size: 1rem;
+            border-bottom: 1px solid var(--color-primary-light);
 
 
         }
@@ -67,6 +67,8 @@
         gap: 2rem;
         padding: 2rem;
         background-color: var(--color-accent);
+        background: linear-gradient(to right, rgba(62, 56, 45, 0.9), rgba(170, 138, 106, 0.137)),
+            url('../../../public/pic4.jpg') center/cover no-repeat;
 
         h2 {
             color: var(--color-accent);
