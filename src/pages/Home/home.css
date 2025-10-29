@@ -3,7 +3,7 @@
 
 .home {
     display: flex;
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary);
     height: 90vh;
 
     .container {
