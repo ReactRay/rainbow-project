@@ -1,4 +1,4 @@
-
+import { toast } from 'react-toastify'
 
 
 interface ColorItemProps {
@@ -11,6 +11,7 @@ function ColorItem({ color = '000000', index = 0 }: ColorItemProps) {
 
     const handleCopy = () => {
         navigator.clipboard.writeText(`#${color}`);
+        toast.success('Copied')
     };
 
 

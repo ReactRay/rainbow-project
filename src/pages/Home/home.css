@@ -98,7 +98,8 @@
     text-align: center;
     background: var(--color-primary-light);
     padding: 2rem;
-    border-radius: var(--radius-lg);
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     color: var(--color-accent);
 }

@@ -1,6 +1,43 @@
 /* ==============================
    Root CSS Variables
    ============================== */
+/* ====== Rainbow Toast Styling ====== */
+.rainbow-toast {
+  background: linear-gradient(to right,
+      var(--color-primary),
+      var(--color-primary-light)) !important;
+  color: var(--color-accent) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  font-family: var(--font-family);
+  border: 1px solid var(--color-border);
+}
+
+.rainbow-toast-body {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(to right, #c0a974, #80e6b1) !important;
+  color: #fff !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(to right, #d44a4a, #ffb3b3) !important;
+  color: #fff !important;
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(to right, #4a90e2, #b0d0ff) !important;
+  color: #fff !important;
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(to right, #ffb84d, #ffe4b3) !important;
+  color: #4a3a2b !important;
+}
+
 :root {
   /* Colors */
   --color-primary: #83705c;

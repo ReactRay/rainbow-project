@@ -17,6 +17,8 @@ createRoot(document.getElementById('root')!).render(
       closeOnClick
       pauseOnHover
       theme="colored"
+      toastClassName="rainbow-toast"
+      style={{ top: '5rem' }} // 👈 moves it slightly lower
     />
   </Provider>
 
