@@ -14,6 +14,7 @@ function Nav() {
                 <a href="#" className=" " onClick={() => navigate('/')}>Home</a>
                 <a href="#" className=" " onClick={() => navigate('/demo')}>Demo</a>
                 <a href="#" className=" " >Posts</a>
+                <a href="#" className=" " onClick={() => navigate('/signup')}>Join Us</a>
             </nav>
         </div>
     )
