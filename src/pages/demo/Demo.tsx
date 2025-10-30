@@ -24,7 +24,6 @@ function Demo() {
 
             const res = await api.post("/color/add", payload);
             toast.success(`Saved ${res.data.hex} 🎨`);
-            console.log("Saved color:", res.data);
         } catch (err: any) {
             console.error("Failed to save color:", err);
             toast.error("Something went wrong saving this color!");

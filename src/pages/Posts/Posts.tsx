@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../api/axiosConfig";
 import "./Posts.css";
 import ColorList from "../../components/ColorList";
+import { toast } from "react-toastify";
 
 interface PostColor {
     id: string;
@@ -26,6 +27,7 @@ function Posts() {
             try {
                 const res = await api.get("/color/all");
                 setColors(res.data);
+                toast.success('Enjoy the Rainbow!')
             } catch (err) {
                 console.error("Failed to fetch posts", err);
             }

@@ -8,6 +8,7 @@ import api from "../../api/axiosConfig";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify'
 
 
 interface LoginData {
@@ -36,6 +37,8 @@ function Login() {
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("token", user.token);
             navigator("/profile");
+            toast.success('Welcome' + user.userName)
+
 
         } catch (err) {
             console.error("Login failed:", err);

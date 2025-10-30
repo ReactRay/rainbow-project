@@ -7,6 +7,7 @@ import { logout } from "../redux/userSlice";
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // install: npm i lucide-react
 import UserBadge from "./userBadge/UserBadge";
+import { toast } from 'react-toastify'
 
 function Nav() {
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ function Nav() {
         localStorage.removeItem("token");
         navigate("/");
         setMenuOpen(false);
+        toast.success('Good bye')
     };
 
     return (

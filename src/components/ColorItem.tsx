@@ -1,4 +1,5 @@
-import React from 'react';
+
+
 
 interface ColorItemProps {
     color?: string;
@@ -10,7 +11,6 @@ function ColorItem({ color = '000000', index = 0 }: ColorItemProps) {
 
     const handleCopy = () => {
         navigator.clipboard.writeText(`#${color}`);
-        alert(`Copied: #${color}`);
     };
 
 

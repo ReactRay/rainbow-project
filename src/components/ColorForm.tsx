@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { toast } from 'react-toastify'
 
 interface ColorFormProps {
     color: string;
@@ -13,7 +14,7 @@ function ColorForm({ color, setColor }: ColorFormProps) {
         e.preventDefault();
 
         if (!checkValidColor(inputColor)) {
-            alert('Please enter a valid hex color code (e.g., #FF5733)');
+            toast.warn('pick a valid color please')
             return;
         }
 
@@ -32,7 +33,7 @@ function ColorForm({ color, setColor }: ColorFormProps) {
                     ref={colorInputRef}
                     type="color"
                     value={inputColor}
-                    onChange={(e) => setInputColor(e.target.value)}
+                    onChange={(e) => setColor(e.target.value)}
                     style={{ display: 'none' }}
                 />
 
