@@ -60,7 +60,7 @@ function Nav() {
                 ) : (
                     <>
                         <a onClick={() => navigate("/profile")}>
-                            {currentUser.userName || "Profile"}
+                            {"Profile"}
                         </a>
                         <a onClick={handleLogout}>Logout</a>
                     </>

@@ -3,7 +3,7 @@
 .user-badge {
     display: flex;
     align-items: center;
-
+    gap: .6rem;
     border-radius: var(--radius-pill);
     transition: var(--transition-fast);
 }
@@ -28,7 +28,7 @@
 }
 
 .user-name {
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-accent);
 }
 

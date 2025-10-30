@@ -1,0 +1,113 @@
+@import "../../index.css";
+
+.profile-container {
+    min-height: 90vh;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg,
+            var(--color-primary-light),
+            var(--color-bg));
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #ffffff90;
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 600px;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    object-fit: cover;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-accent);
+}
+
+.profile-info p {
+    margin-top: 0.3rem;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+/* ================= COLORS GRID ================= */
+.section-title {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-sm);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.3rem;
+}
+
+.color-grid {
+    display: grid;
+    gap: 1.5rem;
+    width: 90%;
+
+}
+
+.color-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    background: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-preview {
+    width: 100%;
+    height: 90px;
+}
+
+.hex-text {
+    padding: 0.5rem;
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.color-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.no-colors {
+    opacity: 0.6;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .color-grid {
+        gap: 1rem;
+    }
+}

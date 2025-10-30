@@ -10,7 +10,6 @@ interface UserBadgeProps {
 
 const UserBadge: React.FC<UserBadgeProps> = ({ compact = false, onClick }) => {
     const user = useSelector((state: RootState) => state.user.currentUser);
-    console.log(user, 'badge')
     if (!user) return null;
 
     return (

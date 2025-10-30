@@ -62,7 +62,6 @@ function Signup() {
         e.preventDefault();
 
         try {
-            console.log("Submitted:", formData);
 
             // 👇  send to your API (adjust the route if yours is /auth/signup)
             const res = await api.post("/auth/register", {
@@ -71,7 +70,6 @@ function Signup() {
                 password: formData.password,
                 userImage: formData.image,    // 👈 match backend DTO
             });
-            console.log("Signup success:", res.data);
 
             navigate("/login");
             toast.success('Account made successfully!')

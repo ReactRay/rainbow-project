@@ -13,7 +13,6 @@ function ColorItem({ color = '000000', index = 0 }: ColorItemProps) {
         alert(`Copied: #${color}`);
     };
 
-    console.log(color)
 
     return (
         <div

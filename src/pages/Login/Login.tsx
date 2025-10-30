@@ -29,14 +29,12 @@ function Login() {
         e.preventDefault();
         setLoading(true);
         try {
-            console.log(formData)
             const res = await api.post("/auth/login", formData);
             const user = res.data;
 
             dispatch(loginSuccess(user));
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("token", user.token);
-            console.log(user)
             navigator("/profile");
 
         } catch (err) {
