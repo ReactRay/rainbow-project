@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface User {
     id?: string;
-    username: string;
+    userName: string;
     email: string;
     image?: string;
     token?: string;

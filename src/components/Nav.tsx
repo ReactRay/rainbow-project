@@ -6,6 +6,7 @@ import type { RootState } from "../redux/store";
 import { logout } from "../redux/userSlice";
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // install: npm i lucide-react
+import UserBadge from "./userBadge/UserBadge";
 
 function Nav() {
     const navigate = useNavigate();
@@ -23,12 +24,21 @@ function Nav() {
 
     return (
         <header className="navbar-container">
-            <img
-                src={logo}
-                alt="Logo"
-                className="logo hover-lift"
-                onClick={() => navigate("/")}
-            />
+            <div className="logo-profile">
+                <img
+                    src={logo}
+                    alt="Logo"
+                    className="logo "
+                    onClick={() => navigate("/")}
+                />
+                {currentUser && (
+                    <>
+                        <UserBadge compact onClick={() => navigate("/profile")} />
+                    </>
+                )}
+
+            </div>
+
 
             {/* Hamburger Icon */}
             <button
@@ -50,7 +60,7 @@ function Nav() {
                 ) : (
                     <>
                         <a onClick={() => navigate("/profile")}>
-                            {currentUser.username || "Profile"}
+                            {currentUser.userName || "Profile"}
                         </a>
                         <a onClick={handleLogout}>Logout</a>
                     </>
@@ -69,9 +79,14 @@ function Nav() {
                 ) : (
                     <>
                         <a onClick={() => { navigate("/profile"); setMenuOpen(false); }}>
-                            {currentUser.username || "Profile"}
+                            {currentUser.userName || "Profile"}
                         </a>
-                        <a onClick={handleLogout}>Logout</a>
+                        {currentUser && (
+                            <>
+                                <UserBadge compact onClick={() => navigate("/profile")} />
+                                <a onClick={handleLogout}>Logout</a>
+                            </>
+                        )}
                     </>
                 )}
             </div>

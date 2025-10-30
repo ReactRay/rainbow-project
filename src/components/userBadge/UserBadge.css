@@ -1,0 +1,48 @@
+@import '../../index.css';
+
+.user-badge {
+    display: flex;
+    align-items: center;
+
+    border-radius: var(--radius-pill);
+    transition: var(--transition-fast);
+}
+
+.user-badge:hover {
+    transform: scale(1.02);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.user-email {
+    font-size: 0.8rem;
+    color: var(--color-text);
+}
+
+/* Compact version for navbar */
+.user-badge.compact .user-email {
+    display: none;
+}
+
+.user-badge.compact .user-avatar {
+    width: 32px;
+    height: 32px;
+}
