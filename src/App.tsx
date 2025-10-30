@@ -6,6 +6,7 @@ import Demo from "./pages/demo/Demo";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Profile from "./pages/profile/Profile";
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/demo" element={<Demo />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
 
 

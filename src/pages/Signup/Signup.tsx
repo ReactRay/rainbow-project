@@ -2,6 +2,7 @@ import { useState, } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import "./Signup.css";
 import colorVid from "../../../public/color-vid.mp4";
+import { Link } from "react-router-dom";
 
 interface FormData {
     username: string;
@@ -116,6 +117,8 @@ function Signup() {
                     <button type="submit" className="btn hover-glow mt-2">
                         Sign Up
                     </button>
+                    <Link to='/login'>Login instead</Link>
+
                 </form>
             </div>
         </div>
