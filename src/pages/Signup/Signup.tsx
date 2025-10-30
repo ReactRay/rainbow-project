@@ -3,7 +3,9 @@ import type { ChangeEvent, FormEvent } from "react";
 import "./Signup.css";
 import colorVid from "../../../public/color-vid.mp4";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import api from "../../api/axiosConfig";
+import { toast } from "react-toastify";
 interface FormData {
     username: string;
     email: string;
@@ -19,7 +21,9 @@ function Signup() {
         image: "",
     });
     const [uploading, setUploading] = useState(false);
-    console.log(import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
+
+
+    const navigate = useNavigate();
 
     const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
     const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
@@ -54,9 +58,33 @@ function Signup() {
         }
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Submitted:", formData);
+
+        try {
+            console.log("Submitted:", formData);
+
+            // 👇  send to your API (adjust the route if yours is /auth/signup)
+            const res = await api.post("/auth/register", {
+                userName: formData.username,  // 👈 match backend DTO
+                email: formData.email,
+                password: formData.password,
+                userImage: formData.image,    // 👈 match backend DTO
+            });
+            console.log("Signup success:", res.data);
+
+            navigate("/login");
+            toast.success('Account made successfully!')
+
+        } catch (err: any) {
+            console.error("Signup failed:", err);
+            if (err.response?.data) {
+                toast.error('something went wrong')
+            } else {
+
+                toast.error('server not responding')
+            }
+        }
     };
 
     return (
