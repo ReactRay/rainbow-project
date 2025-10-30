@@ -1,7 +1,9 @@
 import './home.css';
 import pic from '../../../public/pic3.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+    const navigate = useNavigate()
     return (
         <div className="home fade-in">
             {/* Hero Section */}
@@ -19,8 +21,8 @@ function Home() {
                     </ul>
 
                     <div className="hero-buttons slide-up delay-3">
-                        <button className="btn hover-glow">Learn More</button>
-                        <button className="btn hover-lift btn-accent">Try Demo</button>
+                        <button className="btn hover-glow" onClick={() => navigate('/signup')}>Sign Up</button>
+                        <button className="btn hover-lift btn-accent" onClick={() => navigate('/demo')}>Try Demo</button>
                     </div>
                 </div>
 
