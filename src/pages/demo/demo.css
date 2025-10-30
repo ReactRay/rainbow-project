@@ -87,3 +87,10 @@
 
     }
 }
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
