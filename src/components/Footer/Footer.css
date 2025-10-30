@@ -1,0 +1,73 @@
+@import "../../index.css";
+
+.footer {
+    background: var(--color-accent);
+    color: var(--color-primary-light);
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    border-top: 2px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    margin-top: auto;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing-sm);
+    color: var(--color-primary);
+}
+
+.footer-text {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 400px;
+    line-height: 1.4;
+}
+
+.social-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-container a {
+    color: var(--color-primary-light);
+    font-size: 1.8rem;
+    transition: var(--transition-slow);
+}
+
+.social-container a:hover {
+    color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 0.8rem;
+    }
+
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+
+    .social-container a {
+        font-size: 1.6rem;
+    }
+}

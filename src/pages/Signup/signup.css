@@ -9,11 +9,12 @@
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
+    filter: blur(10px);
 }
 
 .content {
     color: var(--color-text);
-    background-color: #c1aa975b;
+    background-color: #0b0a0992;
     height: 90dvh;
     width: 100%;
     display: flex;
@@ -24,7 +25,7 @@
     h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: var(--color-primary)
+        color: var(--color-primary-light)
     }
 }
 
@@ -35,12 +36,13 @@
     width: 320px;
     padding: 1.5rem;
     border-radius: var(--radius-lg);
-    background-color: var(--color-primary-light);
+    background-color: #ffffff69;
     box-shadow: var(--shadow-md);
 }
 
 .signup-form input {
     padding: 0.8rem;
+    background-color: #ffffff67;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     font-size: 1rem;
@@ -74,19 +76,4 @@
     object-fit: cover;
     margin: 0.5rem auto;
     border: 2px solid var(--color-primary);
-}
-
-button {
-    background-color: var(--color-primary);
-    border: none;
-    color: white;
-    padding: 0.8rem;
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-button:hover {
-    background-color: var(--color-primary-hover);
 }

@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./pages/profile/Profile";
 import Posts from "./pages/Posts/Posts";
+import Footer from "./components/Footer/Footer";
 function App() {
 
 
@@ -27,7 +28,7 @@ function App() {
         </Routes>
 
 
-
+        <Footer />
       </Router>
     </div>
   )

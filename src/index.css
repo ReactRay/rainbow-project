@@ -3,7 +3,7 @@
    ============================== */
 :root {
   /* Colors */
-  --color-primary: #d4b18f;
+  --color-primary: #83705c;
   --color-primary-hover: #bf9f81;
   --color-primary-light: #eee0d2;
   --color-secondary: #7f6a56;
@@ -262,7 +262,6 @@ body {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 15px var(--color-primary);
   transform: scale(1.03);
 }
 
