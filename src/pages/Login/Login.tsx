@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
-import './Login.css'
+import './login.css'
 
 
 interface LoginData {
