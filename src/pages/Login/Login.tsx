@@ -1,14 +1,13 @@
 import { useState, } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import "./Login.css";
 import colorVid from "../../../public/color1.mp4";
 import { Link } from "react-router-dom";
-
 import api from "../../api/axiosConfig";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
+import './Login.css'
 
 
 interface LoginData {
