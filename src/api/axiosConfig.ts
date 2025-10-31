@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// 👇 Change to match your API port (from launchSettings.json)
+// ✅ Change baseURL to your deployed API
 const api = axios.create({
-    baseURL: "https://localhost:7002/api", // or http://localhost:5001/api
+    baseURL: "https://app-rainbow-eastus-dev-001-btgxcnb7apapcbgs.westeurope-01.azurewebsites.net/api",
     headers: {
         "Content-Type": "application/json",
     },

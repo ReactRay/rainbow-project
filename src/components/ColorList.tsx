@@ -1,7 +1,6 @@
 
 import Values from "values.js"
 import ColorItem from "./ColorItem"
-import { useState } from "react";
 import './colors-lost.css'
 
 function ColorList({ color }: { color: string }) {

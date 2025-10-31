@@ -1,7 +1,6 @@
 
 import Nav from "./components/Nav"
 import Home from "./pages/Home/Home"
-import Values from 'values.js';
 import Demo from "./pages/demo/Demo";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";

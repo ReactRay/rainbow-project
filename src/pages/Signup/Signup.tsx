@@ -64,7 +64,7 @@ function Signup() {
         try {
 
             // 👇  send to your API (adjust the route if yours is /auth/signup)
-            const res = await api.post("/auth/register", {
+            await api.post("/auth/register", {
                 userName: formData.username,  // 👈 match backend DTO
                 email: formData.email,
                 password: formData.password,
