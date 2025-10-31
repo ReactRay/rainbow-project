@@ -1,6 +1,6 @@
 import { useState, } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import "./Signup.css";
+import "./signup.css";
 import colorVid from "../../../public/color-vid.mp4";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
