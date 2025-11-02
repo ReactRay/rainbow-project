@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# 🌈 Rainbow — Color Palette Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Rainbow Preview 1](https://res.cloudinary.com/danlxus36/image/upload/v1761918699/rainbow_zozgqw.png)
+![Rainbow Preview 2](https://res.cloudinary.com/danlxus36/image/upload/v1761918699/rainbow4_r8zu3v.png)
+![Rainbow Preview 3](https://res.cloudinary.com/danlxus36/image/upload/v1761918699/rainbow3_viuurp.png)
+![Rainbow Preview 4](https://res.cloudinary.com/danlxus36/image/upload/v1761918698/rainbow2_rv7diq.png)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Overview
+**Rainbow** is a modern color palette generator built with **Vite + React + TypeScript**.  
+It allows designers and developers to easily create, explore, and save beautiful color combinations for their next project.
 
-## React Compiler
+The app is connected to a **.NET Core backend (Azure-hosted)** for authentication and user management.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎨 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔐 **User authentication** (JWT-based, integrated with Azure API)
+- 🎨 **Color palette generation** — create and explore matching color sets
+- 🌈 **Shades & tints** — visualize lighter and darker versions of a base color
+- 💾 **Save your palettes** to your personal profile
+- 🧠 **Inspiration mode** — discover palettes created by others
+- ⚡ **Built with Vite** for instant builds and blazing-fast performance
+- ☁️ **Deployed Frontend:** [Rainbow Project (Vercel)](https://rainbow-project-redw.vercel.app)
+- 🧩 **Backend:** ASP.NET Core API (Azure)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Frontend**
+- React + Vite + TypeScript  
+- CSS Modules  
+- Axios (for API requests)  
+- Toast notifications  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Backend**
+- .NET 8 Web API  
+- Entity Framework Core  
+- SQL Server (Azure)  
+- JWT Authentication  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Hosting**
+- Frontend: Vercel  
+- Backend: Azure App Service  
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## ⚙️ Environment Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ReactRay/rainbow-project.git
+   cd rainbow-project
