@@ -14,6 +14,20 @@
     z-index: 1000;
 }
 
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
 .logo-profile {
     display: flex;
     gap: 1rem;

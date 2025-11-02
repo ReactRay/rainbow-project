@@ -5,9 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../redux/store";
 import { logout } from "../redux/userSlice";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // install: npm i lucide-react
+import { Menu, X, Home, MonitorPlay, FileText, UserPlus, User, LogOut } from "lucide-react";
 import UserBadge from "./userBadge/UserBadge";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 
 function Nav() {
     const navigate = useNavigate();
@@ -21,8 +21,23 @@ function Nav() {
         localStorage.removeItem("token");
         navigate("/");
         setMenuOpen(false);
-        toast.success('Good bye')
+        toast.success("Good bye");
     };
+
+    const NavItem = ({
+        icon: Icon,
+        label,
+        onClick,
+    }: {
+        icon: any;
+        label: string;
+        onClick: () => void;
+    }) => (
+        <a onClick={onClick} className="nav-link">
+            <Icon size={18} style={{ marginRight: "6px" }} />
+            {label}
+        </a>
+    );
 
     return (
         <header className="navbar-container">
@@ -30,17 +45,11 @@ function Nav() {
                 <img
                     src={logo}
                     alt="Logo"
-                    className="logo "
+                    className="logo"
                     onClick={() => navigate("/")}
                 />
-                {currentUser && (
-                    <>
-                        <UserBadge compact onClick={() => navigate("/profile")} />
-                    </>
-                )}
-
+                {currentUser && <UserBadge compact onClick={() => navigate("/profile")} />}
             </div>
-
 
             {/* Hamburger Icon */}
             <button
@@ -53,42 +62,35 @@ function Nav() {
 
             {/* Desktop Nav */}
             <nav className="navbar desktop-nav">
-                <a onClick={() => navigate("/")}>Home</a>
-                <a onClick={() => navigate("/demo")}>Demo</a>
-                {currentUser && <a onClick={() => navigate("/posts")}>Posts</a>}
+                <NavItem icon={Home} label="Home" onClick={() => navigate("/")} />
+                <NavItem icon={MonitorPlay} label="Demo" onClick={() => navigate("/demo")} />
+                {currentUser && (
+                    <NavItem icon={FileText} label="Posts" onClick={() => navigate("/posts")} />
+                )}
 
                 {!currentUser ? (
-                    <a onClick={() => navigate("/signup")}>Join Us</a>
+                    <NavItem icon={UserPlus} label="Join Us" onClick={() => navigate("/signup")} />
                 ) : (
                     <>
-                        <a onClick={() => navigate("/profile")}>
-                            {"Profile"}
-                        </a>
-                        <a onClick={handleLogout}>Logout</a>
+                        <NavItem icon={User} label="Profile" onClick={() => navigate("/profile")} />
+                        <NavItem icon={LogOut} label="Logout" onClick={handleLogout} />
                     </>
                 )}
             </nav>
 
             {/* Mobile Nav */}
             <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-                <a onClick={() => { navigate("/"); setMenuOpen(false); }}>Home</a>
-                <a onClick={() => { navigate("/demo"); setMenuOpen(false); }}>Demo</a>
+                <NavItem icon={Home} label="Home" onClick={() => { navigate("/"); setMenuOpen(false); }} />
+                <NavItem icon={MonitorPlay} label="Demo" onClick={() => { navigate("/demo"); setMenuOpen(false); }} />
                 {currentUser && (
-                    <a onClick={() => { navigate("/posts"); setMenuOpen(false); }}>Posts</a>
+                    <NavItem icon={FileText} label="Posts" onClick={() => { navigate("/posts"); setMenuOpen(false); }} />
                 )}
                 {!currentUser ? (
-                    <a onClick={() => { navigate("/signup"); setMenuOpen(false); }}>Join Us</a>
+                    <NavItem icon={UserPlus} label="Join Us" onClick={() => { navigate("/signup"); setMenuOpen(false); }} />
                 ) : (
                     <>
-                        <a onClick={() => { navigate("/profile"); setMenuOpen(false); }}>
-                            {currentUser.userName || "Profile"}
-                        </a>
-                        {currentUser && (
-                            <>
-                                <UserBadge compact onClick={() => navigate("/profile")} />
-                                <a onClick={handleLogout}>Logout</a>
-                            </>
-                        )}
+                        <NavItem icon={User} label="Profile" onClick={() => { navigate("/profile"); setMenuOpen(false); }} />
+                        <NavItem icon={LogOut} label="Logout" onClick={handleLogout} />
                     </>
                 )}
             </div>
